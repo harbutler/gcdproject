@@ -1,8 +1,5 @@
-gcdproject
-==========
-
-The project for Getting and Cleaning Data course on Coursera
-
+CodeBook
+========
 
 activity - the activity. Factor with 6 levels `WALKING`, `WALKING_UPSTAIRS`,
  `WALKING_DOWNSTAIRS`, `SITTING`, `STANDING` and `LAYING`.
@@ -10,9 +7,10 @@ activity - the activity. Factor with 6 levels `WALKING`, `WALKING_UPSTAIRS`,
 subjectId - identifier of the subject who performed the activity for each
  window sample. Its range is from 1 to 30. 
 
-NOTE: Features are normalized and bounded within [-1,1].
+The averages of the following feature values from the input data.
+**NOTE**: Features are normalized and bounded within [-1,1].
 
-
+```
 tBodyAcc-mean()-X
 tBodyAcc-mean()-Y
 tBodyAcc-mean()-Z
@@ -79,3 +77,4 @@ fBodyBodyGyroMag-mean()
 fBodyBodyGyroMag-std()     
 fBodyBodyGyroJerkMag-mean()
 fBodyBodyGyroJerkMag-std()
+```
