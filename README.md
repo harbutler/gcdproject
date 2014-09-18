@@ -8,27 +8,34 @@ Input
 The data was collected from the accelerometers from the Samsung Galaxy S smartphone worn by 30 volunteers.
 The full description is available at the site where the data was obtained:
 
-[link](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
+[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones](http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones)
 
 See also the `README.txt` file in the `UCI HAR Dataset` folder.
 
 Here is a quick summary of the files.
 
-activity_labels.txt - the code values for the different types of activity
-features.txt - enumeration of the 561 *features* included in each *feature vector*. See 'train/X_train.txt'
-features_info.txt - describes what each of the 561 features is.
-train/subject_train.txt - 7352 rows. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
-train/X_train.txt - 7352 rows. Each row has the *feature vector* for that window sample which is 561 space separated values. `features.txt` specifies what *feature* each value is for.
-train/y_train.txt - 7532 rows. Each row has the code for the type of activity for that window sample. Its range is that specified in activity_labels.txt (1 to 6).
+`activity_labels.txt` - the code values for the different types of activity
 
-test/subject_test.txt - 2947 rows. See train/subject_train.txt
-test/X_test.txt - 2947 rows. See train/X_train.txt
-test/y_test.txt - 2947 rows. See train/y_train.txt 
+`features.txt` - enumeration of the 561 *features* included in each *feature vector*. See 'train/X_train.txt'
+
+`features_info.txt` - describes what each of the 561 features is.
+
+`train/subject_train.txt` - 7352 rows. Each row identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+
+`train/X_train.txt` - 7352 rows. Each row has the *feature vector* for that window sample which is 561 space separated values. `features.txt` specifies what *feature* each value is for.
+
+`train/y_train.txt` - 7532 rows. Each row has the code for the type of activity for that window sample. Its range is that specified in `activity_labels.txt` (1 to 6).
+
+`test/subject_test.txt` - 2947 rows. See `train/subject_train.txt`
+
+`test/X_test.txt`- 2947 rows. See `train/X_train.txt`
+
+`test/y_test.txt` - 2947 rows. See `train/y_train.txt` 
 
 
 Processing
 ----------
-Run the `run_analysis.R` script using version 3.1.1 of R.
+Run the `run_analysis.R` script using version 3.1.1 of R (`source("run_analysis.R")`)
 
 The script does the following steps to transform the raw data (contained in the
  `UCI HAR Dataset` folder) to *tidy data* :
@@ -46,18 +53,21 @@ Output
 ------
 `CodeBook.md` describes the data that is generated.
 
-The `run_analysis.R` scrupt uses write.table to output the tidy data to
-a file called `tidy.dat`.
+The `run_analysis.R` script uses `write.table` to output the tidy data to
+a file called `tidydata.txt`.
 
 This file can be read using R:
-`data <- read.table(file_path, header = TRUE) 
-View(data)`
+```R
+data <- read.table("tidydata.txt", header = TRUE) 
+View(data)
+```
 
 
 Features
 --------
-The features that are read:
+The features that are read are:
 
+```
 1 tBodyAcc-mean()-X
 2 tBodyAcc-mean()-Y
 3 tBodyAcc-mean()-Z
@@ -124,3 +134,4 @@ The features that are read:
 530 fBodyBodyGyroMag-std()
 542 fBodyBodyGyroJerkMag-mean()
 543 fBodyBodyGyroJerkMag-std()
+```

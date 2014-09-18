@@ -72,4 +72,4 @@ tidyDf$subjectId <- NULL
 df <- aggregate(tidyDf, by = aggregateBy, FUN = mean, na.rm = TRUE)
 
 # Output the data to file
-write.table(df, file = "tidy.dat", row.names = FALSE)
+write.table(df, file = "tidydata.txt", row.names = FALSE)
